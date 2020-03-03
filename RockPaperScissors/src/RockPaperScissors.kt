@@ -3,7 +3,7 @@ fun main() {
     val options = arrayOf("Rock", "Paper", "Scissors")
     val gameChoice = getGameChoice(options)
     val userChoice = getUserChoice(options)
-    printResult(userChoice, gameChoice)
+    printResult(userChoice.capitalize(), gameChoice)
 }
 
 fun getGameChoice(options:Array<String>) = options[(Math.random() *options.size).toInt()]
@@ -16,7 +16,7 @@ fun getUserChoice(options: Array<String>): String {
         for (option in options) print(" $option")
         println(".")
         val userInput = readLine()
-        if(userInput != null && userInput in options) {
+        if(userInput != null && userInput.capitalize() in options) {
             isValidChoice = true
             userChoice = userInput
         }
